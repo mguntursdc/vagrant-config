@@ -31,6 +31,12 @@ Vagrant.configure("2") do |config|
             vb.cpus = "2"
             vb.memory = "2048"
         end
+    vmWP.vm.provision "shell", inline: <<-SHELL
+        sudo su
+        cd
+        git clone https://github.com/mguntursdc/web-server-wordpress.git
+        cd web-server-wordpress/ && bash wordpress-setup.sh
+    SHELL
     end
 
     config.vm.define "webapp-vm" do |vmWA|
