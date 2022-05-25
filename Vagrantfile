@@ -51,7 +51,7 @@ Vagrant.configure("2") do |config|
                 vb.cpus = "2"
                 vb.memory = "2048"
             end
-    vmWA.vm.provision "shell", inline <<-SHELL
+    vmWA.vm.provision "shell", inline: <<-SHELL
         sudo su
         cd
         git clone https://github.com/mguntursdc/web-server-pesbuk.git
